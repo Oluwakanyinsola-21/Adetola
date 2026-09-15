@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday, Emma! 🎂</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Georgia, serif;
+            background: linear-gradient(135deg, #251337, #713c68, #d99a9a);
+            color: white;
+            padding: 20px;
+        }
+
+        .card {
+            max-width: 600px;
+            width: 100%;
+            padding: 35px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.13);
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 38px;
+        }
+
+        .intro {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 15px 25px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #message {
+    display: none;
+    margin-top: 30px;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+#loading {
+    display: none;
+    margin-top: 30px;
+    text-align: left;
+    font-family: monospace;
+    background: #111;
+    padding: 20px;
+    border-radius: 15px;
+    color: #00ff88;
+}
+
+.progress {
+    width: 100%;
+    height: 15px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background: #00ff88;
+}
+
+        #message h2 {
+            text-align: center;
+        }
+
+        .signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>🎂 Hey Emma! 🎂</h1>
+
+        <p class="intro">
+            I made a little something for you. 👀
+        </p>
+
+       <button onclick="openSurprise()">
+    🎁 Open Your Surprise
+</button>
+
+<div id="loading">
+
+    <div id="terminalText"></div>
+
+    <div class="progress">
+        <div id="progressBar"></div>
+    </div>
+
+    <p id="percent">0%</p>
+
+</div>
+
+<div id="message">
+
+    <h2>🎉 SYSTEM UPDATE COMPLETE 🎉</h2>
+
+    <p>Yo Emma 😂,</p>
+
+    <p>Thank you.</p>
+
+    <p>
+        It’s funny how, even though we’re not that close,
+        you’re still so fond of me and always willing to
+        help me out in different ways. I really appreciate that. ❤️
+    </p>
+
+    <p>
+        It’s a new year for you, and I’m so happy for you! 🥳
+    </p>
+
+    <p>
+        I pray that God blesses you greatly, guides you,
+        and makes this new year a beautiful one for you.
+    </p>
+
+    <p>
+        I honestly didn’t know what the best gift for you
+        would be, so I just decided on this. 😂
+    </p>
+
+    <p>
+        I hope it makes you smile. ❤️
+    </p>
+
+    <p>
+        Happy Birthday, Emma! 🎂🎉
+    </p>
+
+    <p>
+        Jaiye lo Adetola
+    </p>
+
+    <p>
+        — Oluwakanyinsola
+    </p>
+
+</div>
+
+        <div id="message">
+
+            <h2>🎉 Happy Birthday! 🎉</h2>
+
+            <p>Yo Emma 😂,</p>
+
+            <p>Thank you.</p>
+
+            <p>
+                It’s funny how, even though we’re not that close,
+                you’re still so fond of me and always willing to
+                help me out in different ways. I really appreciate that. ❤️
+            </p>
+
+            <p>
+                It’s a new year for you, and I’m so happy for you! 🥳
+            </p>
+
+            <p>
+                I pray that God blesses you greatly, guides you,
+                and makes this new year a beautiful one for you.
+            </p>
+
+            <p>
+                I honestly didn’t know what the best gift for you
+                would be, so I just decided on this. 😂
+            </p>
+
+            <p>
+                I hope it makes you smile. ❤️
+            </p>
+
+            <p>
+                Happy Birthday, Emma! 🎂🎉
+            </p>
+
+            <p>
+    Jaiye lo Adetola
+</p>
+
+<p>
+    — Oluwakanyinsola
+</p>
+
+        </div>
+
+    </div>
+
+   <script>
+
+    function openSurprise() {
+
+        document.getElementById("loading").style.display = "block";
+
+        let messages = [
+            "Initializing birthday_protocol...",
+            "Scanning for birthday human...",
+            "Emma detected ✓",
+            "Loading new_age.exe..."
+        ];
+
+        let terminal = document.getElementById("terminalText");
+        let messageIndex = 0;
+
+        function typeMessage() {
+
+            if (messageIndex >= messages.length) {
+                startProgress();
+                return;
+            }
+
+            let message = messages[messageIndex];
+            let letterIndex = 0;
+
+            let line = document.createElement("p");
+            terminal.appendChild(line);
+
+            let typing = setInterval(function() {
+
+                line.textContent += message[letterIndex];
+
+                letterIndex++;
+
+                if (letterIndex >= message.length) {
+
+                    clearInterval(typing);
+
+                    messageIndex++;
+
+                    setTimeout(typeMessage, 500);
+                }
+
+            }, 45);
+        }
+
+        function startProgress() {
+
+            let progress = 0;
+
+            let timer = setInterval(function() {
+
+                progress += 1;
+
+                document.getElementById("progressBar").style.width =
+                    progress + "%";
+
+                document.getElementById("percent").textContent =
+                    progress + "%";
+
+                if (progress >= 100) {
+
+                    clearInterval(timer);
+
+                    setTimeout(function() {
+
+                        document.getElementById("loading").style.display =
+                            "none";
+
+                        document.getElementById("message").style.display =
+                            "block";
+
+                    }, 700);
+                }
+
+            }, 30);
+        }
+
+        typeMessage();
+    }
+
+</script>
+
+</body>
+
+</html>
